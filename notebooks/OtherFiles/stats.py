@@ -11,7 +11,18 @@ def mean(vals):
 
 def median(vals):
     """Computes the median from a list of values."""
-    pass
+    try:
+        sorted = vals.sort()
+        length = len(vals)
+    except TypeError:
+        raise TypeError("The list was not numbers.")
+    except:
+        print "Something unknown happened with the list."
+    # find median from list
+    if length % 2 == 1:
+        return vals[length // 2]
+    else:
+        return (vals[length / 2] + vals[length / 2 - 1]) / 2
 
 def mode(vals):
     """Computes the mode from a list of values."""
